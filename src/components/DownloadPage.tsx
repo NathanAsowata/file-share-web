@@ -41,7 +41,7 @@ const DownloadPage: React.FC = () => {
   }, [shortId]);
 
   const handleDownload = () => {
-    const downloadUrl = `https://<EC2_IP_ADDRESS_OR_DOMAIN>/api/v1/download/${shortId}`;
+    const downloadUrl = `${import.meta.env.VITE_API_BASE_URL}/api/v1/download/${shortId}`;
     window.location.href = downloadUrl;
   };
 
