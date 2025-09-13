@@ -31,9 +31,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
-  padding-top: 5vh;
+  padding-top: 0;
 }
 
 /* 4. Typography Defaults */

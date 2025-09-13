@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMetadata } from '../services/api';
 import { format, isPast } from 'date-fns';
-import { DownloadSimpleIcon, WarningCircleIcon } from '@phosphor-icons/react';
+import { DownloadSimpleIcon, WarningCircleIcon, CopyIcon } from '@phosphor-icons/react';
 import styles from '../styles/DownloadPage.module.css';
 
 interface Metadata {
@@ -17,6 +17,7 @@ const DownloadPage: React.FC = () => {
   const { shortId } = useParams<{ shortId: string }>();
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isCopied, setIsCopied] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -44,6 +45,14 @@ const DownloadPage: React.FC = () => {
     const downloadUrl = `${import.meta.env.VITE_API_BASE_URL}/api/v1/download/${shortId}`;
     window.location.href = downloadUrl;
   };
+
+  const handleCopyText = () => {
+  if (metadata?.textContent) {
+    navigator.clipboard.writeText(metadata.textContent);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2500);
+  }
+};
 
   if (isLoading) {
     return <div className={styles.container}><p>Loading...</p></div>;
@@ -78,10 +87,18 @@ const DownloadPage: React.FC = () => {
         </div>
       )}
 
+     <div className={styles.buttonContainer}>
+      {metadata.uploadType === 'TEXT' && metadata.textContent && (
+        <button onClick={handleCopyText} className={styles.copyButton}>
+          <CopyIcon size={22} weight="bold" />
+          {isCopied ? 'Copied!' : 'Copy Text'}
+        </button>
+      )}
       <button onClick={handleDownload} className={styles.downloadButton}>
         <DownloadSimpleIcon size={22} weight="bold" />
         Download
-      </button>
+    </button>
+</div>
     </div>
   );
 };

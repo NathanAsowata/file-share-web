@@ -58,7 +58,6 @@
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: background-color var(--transition-speed);
-  margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -66,4 +65,32 @@
 
 .downloadButton:hover {
   background-color: var(--accent-color);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.copyButton {
+  background-color: #f0f0f0;
+  color: var(--text-headings);
+  border: 1px solid #ccc;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copyButton:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
 }
