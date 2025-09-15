@@ -32,7 +32,9 @@ const DownloadPage: React.FC = () => {
             setMetadata(response.data);
         }
       } catch (err) {
-        setError('File not found or has expired.' + err);
+        setError('File not found or has expired.');
+        console.error(err);
+        
       } finally {
         setIsLoading(false);
       }
