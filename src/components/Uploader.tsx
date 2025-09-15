@@ -65,7 +65,7 @@ const Uploader: React.FC = () => {
   return (
     <div className={styles.uploaderContainer}>
       <header className={styles.header}>
-        <h1>Share files safely</h1>
+        <h1>FileShare</h1>
         <p>Minimalist, secure, and temporary content sharing</p>
       </header>
 
