@@ -4,7 +4,7 @@ FileShare is a minimalist, secure, and temporary file and text sharing web appli
 
 **Live Application:** [https://share.nathanasowata.com](https://share.nathanasowata.com)
 
-This application is designed to communicate with the corresponding backend API, available at the [file-share (backend) repository](https://github.com/your-username/file-share).
+This application is designed to communicate with the corresponding backend API, available at the [file-share (backend) repository](https://github.com/NathanAsowata/file-share).
 
 ---
 
@@ -21,7 +21,7 @@ To run the frontend development server locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/file-share-web.git
+    git clone https://github.com/NathanAsowata/file-share-web.git
     cd file-share-web
     ```
 
